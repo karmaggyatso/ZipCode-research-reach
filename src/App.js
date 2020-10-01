@@ -3,7 +3,6 @@ import './App.css';
 
 function City(props) {
   const {city, state, latitude, longitude, population, totalWages, isEmpty} = props;
-  // console.log(isEmpty);
   return (
       <div>
         {isEmpty? 
@@ -52,29 +51,10 @@ class App extends Component {
     result: false,
   }
 
-  // callApi (event) {
-  //   event.preventDefault();
-  //   console.log(this.state.zipCode);
-  //   fetch(`http://ctp-zip-api.herokuapp.com/zip/${this.state.zipCode}`)
-  //   .then(res => res.json())
-  //   .then(response => {
-  //     console.log(response);
-  //     this.setState({
-  //       item: response
-  //     })
-  //   })
-  //   .catch (error =>{
-  //     console.error(error);
-  //   });
-  // }
-
-  
-  
 
   handleOnChange = (event) => {
     const query = event.target.value;
     const xhr = new XMLHttpRequest();
-    // console.log(xhr.status);
     
     this.setState({
       zipCode: event.target.value,
@@ -124,16 +104,6 @@ class App extends Component {
           <h2>Zip Code Search</h2>
         </div>
         <div className = "container text-center m-3 ">
-        {/* <form>
-            <label htmlFor = "search-input">Zip Code:</label>
-            <input type = "text" 
-              name = "query"
-              value = {zipCode}
-              placeholder = "Try 10016"
-              onChange = {(e)=> this.handleOnChange(e)}
-              />
-              <button onClick = {(e) => this.callApi(e)}>button</button>
-          </form> */}
          
 
           <ZipSearchField zipChange = {(e) => this.handleOnChange(e)}/>
